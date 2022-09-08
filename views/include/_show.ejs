@@ -1,17 +1,21 @@
+<% users.forEach(element => { %>
+ 
 <tbody>
     <tr>
-        <td>1</td>
-        <td>Username</td>
-        <td>Example@.com</td>
-        <td>Male</td>
-        <td>Active</td>
+        <td><%= element.id %> </td>
+        <td><%= element.name %> </td>
+        <td><%= element.email  %> </td>
+        <td><%= element.gender  %></td>
+        <td><%= element.status  %></td>
         <td>
-            <a href="/update-user" class="btn border-shadow update">
+            <a href="/update-user?id=<%= element._id %>" class="btn border-shadow update">
                 <span class="textgradient"><i class="fas fa-pencil-alt" ></i></span>
             </a>
-            <a class="btn border-shadow delete">
+            <a class="btn border-shadow delete" data-id=<%= element._id %>>
                 <span class="textgradient"><i class="fas fa-times" ></i></span>
             </a>
-        </td>
+        </td> 
     </tr>
 </tbody>
+
+<% }) %>
